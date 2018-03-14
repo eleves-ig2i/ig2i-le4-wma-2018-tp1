@@ -6,4 +6,5 @@
     <string name="inputNom">Aurélien</string>
     <string name="action_settings">Préférences</string>
     <string name="title_activity_display_message">DisplayMessageActivity</string>
+    <string name="action_pagnien">Qu\'en penses tu ?</string>
 </resources>

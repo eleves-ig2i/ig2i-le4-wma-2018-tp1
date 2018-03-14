@@ -3,6 +3,8 @@ package aledieu.tp1;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,8 +23,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         editTexteName = findViewById(R.id.inputNom);
 
         OKbutton.setOnClickListener(this);
-        editTexteName.setOnClickListener(this);
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                break;
+            case R.id.action_pagnien:
+                alerter("Antoine Pagnien");
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 
 
     //Fonction permettant de réaliser les actions après un click sur un bouton
@@ -35,18 +55,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btnOK:
-                sendMessage(view);
-                break;
-            case R.id.inputNom:
-                alerter("Click sur input");
+                sendNameToActivity(view);
                 break;
         }
     }
 
-    public void sendMessage(View view) {
+    public void sendNameToActivity(View view) {
         Intent intent = new Intent(this, DisplayMessageActivity.class);
         Bundle bundle = new Bundle();
         bundle.putString("name", editTexteName.getText().toString());
-        startActivity(intent.putExtras(bundle));
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 }
