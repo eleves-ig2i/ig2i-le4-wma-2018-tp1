@@ -5,4 +5,5 @@
     <string name="nom">Nom: </string>
     <string name="inputNom">Aurélien</string>
     <string name="action_settings">Préférences</string>
+    <string name="title_activity_display_message">DisplayMessageActivity</string>
 </resources>

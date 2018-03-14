@@ -1,5 +1,6 @@
 package aledieu.tp1;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -29,18 +30,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //Log.i("DWM", message);
         Toast toast = Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG);
         toast.show();
-
-
     }
 
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btnOK:
-                alerter(editTexteName.getText() + " une chanson !");
+                sendMessage(view);
                 break;
             case R.id.inputNom:
                 alerter("Click sur input");
                 break;
         }
+    }
+
+    public void sendMessage(View view) {
+        Intent intent = new Intent(this, DisplayMessageActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putString("name", editTexteName.getText().toString());
+        startActivity(intent.putExtras(bundle));
     }
 }
