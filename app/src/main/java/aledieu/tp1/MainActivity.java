@@ -9,16 +9,18 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private EditText editTexteName;
+    private Button OKbutton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_relative);
+        OKbutton = findViewById(R.id.btnOK);
+        editTexteName = findViewById(R.id.inputNom);
 
-        Button button = findViewById(R.id.btnOK);
-        EditText editText = findViewById(R.id.inputNom);
-
-        button.setOnClickListener(this);
-        editText.setOnClickListener(this);
+        OKbutton.setOnClickListener(this);
+        editTexteName.setOnClickListener(this);
     }
 
 
@@ -27,12 +29,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //Log.i("DWM", message);
         Toast toast = Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG);
         toast.show();
+
+
     }
 
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btnOK:
-                alerter("Clic sur bouton");
+                alerter("Click sur bouton");
                 break;
             case R.id.inputNom:
                 alerter("Click sur input");
