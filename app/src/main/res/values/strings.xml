@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">HelloApp</string>
+    <string name="app_name">TP1</string>
     <string name="OK">OK</string>
-    <string name="hello">Hello App !</string>
+    <string name="hello">Hello !</string>
     <string name="nom">Nom: </string>
-    <string name="inputNom">Aurélien : </string>
+    <string name="inputNom">Aurélien</string>
     <string name="action_settings">Préférences</string>
 </resources>

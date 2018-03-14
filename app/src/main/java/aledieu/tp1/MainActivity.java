@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btnOK:
-                alerter("Click sur bouton");
+                alerter(editTexteName.getText() + " une chanson !");
                 break;
             case R.id.inputNom:
                 alerter("Click sur input");
